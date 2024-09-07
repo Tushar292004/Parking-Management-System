@@ -4,9 +4,6 @@ import '../css/about.scss'
 const About = () => {
     return (
         <div>
-            <div className='overlay'>
-                <h1>About</h1>
-            </div>
             <div className='container'>
                 <div className='row py-5 my-5'>
                     <h2 className='mb-3'>About Us</h2>

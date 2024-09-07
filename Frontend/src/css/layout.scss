@@ -4,7 +4,15 @@
 
 .navbar {
     background-color: #171717 !important;
-    box-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 0.3);
+    box-shadow: 0.2em 0.2em 1em rgba(255, 255, 255, 0.3);
+}
+
+.nav-item {
+    margin-right: 0.5em;
+    font-size: 1.3rem;
+}
+.nav-link:hover{
+    color: #0DCAF0;
 }
 
 main {

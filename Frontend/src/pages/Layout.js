@@ -25,7 +25,7 @@ const Layout = () => {
         <div className="main-container">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Rent a spot</a>
+                    <a className="navbar-brand" href="#">SwiftPark</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -66,7 +66,7 @@ const Layout = () => {
                             {user ?
                                 <>
                                     <li className="nav-item ms-2">
-                                        <Link className="nav-link" to='/profile'><div className="bg-dark px-3 py-2 rounded-circle pointer">{user?.name && user?.name[0]}</div></Link>
+                                        <Link className="nav-link" to='/profile'><div className="bg-dark px-3 py-2  pointer">{user?.name && user?.name[0]}</div></Link>
                                     </li>
                                     <li className="nav-item ms-2">
                                         <button className="btn btn-outline-info" onClick={handleLogout}>Logout</button>
@@ -89,7 +89,7 @@ const Layout = () => {
             <footer className="container-fluid p-5 mt-5">
                 <div className="row">
                     <div className="col-md-4">
-                        <p>Copyright &copy; 2023 by Harshadkumar Patel</p>
+                        <p>Copyright &copy; 2024 by Tushar Chandak</p>
                     </div>
                     <div className="col-md-4">
                     </div>

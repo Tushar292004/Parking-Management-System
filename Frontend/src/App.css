@@ -1,11 +1,11 @@
 body{
-    background: rgba(0, 0, 0, .8);
+    background: #171717;
     color: #fff;
 }
 .card {
-    background-color: #000;
+    background-color: #171717;
+    border: 2px solid white;
     color: #fff;
-    border: none;
     border-radius: 10px;
     box-shadow: 0.2em 0.2em 1em rgba(0, 0, 0, 0.3);
 }

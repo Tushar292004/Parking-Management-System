@@ -6,20 +6,30 @@ Helping parking owners earn extra income by renting out their unused spaces
 Assisting users in finding cost-effective parking solutions
 Streamlining the process of parking space management and booking
 
-## Features✨
+## Features ✨
 
 👤 User Registration and Login
+
 📝 Profile Management
+
 🅿️ Parking Spot Listing
+
 🗓️ Parking Spot Management
+
 📅 Booking and Reservation System
+
 ⭐ User Review and Rating
+
 🔍 Search and Filter Functionality
+
 👨‍💼 Admin Dashboard for User Management
 
-🛠️ Technologies Used
+## Technologies Used 🛠️
 
 Backend: Node.js, Express
+
 Frontend: React, JavaScript
+
 Styling: CSS, Bootstrap, SCSS
+
 Database: MongoDB

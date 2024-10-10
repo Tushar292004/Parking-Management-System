@@ -17,7 +17,7 @@ const Booking = () => {
     // Used to display multiple Booking cards
     const bookingsRow = () => {
         return bookings && bookings.map((item, index) => (
-            <tr className='col-md-4' key={index}>
+            <tr className='col-md-4'  key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{item?.vehicle_company}</td>
                 <td>{item?.vehicle_model}</td>

@@ -9,7 +9,7 @@ const userRouter = Router();
 
 const { SECRET_JWT_CODE = "jafha71yeiqquy1#@!" } = process.env;
 
-// Register new user
+// Register new user endpoint
 userRouter.post("/register", async (req, res) => {
     try {
         let { name, email, password, type } = req.body
@@ -73,7 +73,7 @@ userRouter.get("/", async (req, res) => {
 });
 
 
-// Login existing user
+// Login existing user endpoint
 userRouter.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body
@@ -124,7 +124,7 @@ userRouter.post("/login", async (req, res) => {
     }
 });
 
-// Reset password
+// Reset password endpoint
 userRouter.post("/resetPassword/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -180,7 +180,7 @@ userRouter.post("/resetPassword/:id", async (req, res) => {
 });
 
 
-// Update user
+// Update user endpoint
 userRouter.put("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -219,7 +219,7 @@ userRouter.put("/:id", async (req, res) => {
     }
 });
 
-// Delete user
+// Delete user endpoint
 userRouter.route('/delete/:id').delete(async (req, res) => {
     try {
         const { id } = req.params

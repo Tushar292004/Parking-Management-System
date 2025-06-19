@@ -12,7 +12,7 @@ const Layout = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
-        dispatch(clearUser());
+        dispatch(clearUser()); //Clear User from Redux Store
     };
 
     //Protected Path Logic
@@ -85,10 +85,12 @@ const Layout = () => {
                 </div>
             </nav>
 
+            {/* Main Content + Speacial React Router Outlet */}
             <main>
                 <Outlet />
             </main>
 
+            {/* Footer */}  
             <footer className="container-fluid  mt-5">
                 <div className="row">
                     <div className="col-md-4">

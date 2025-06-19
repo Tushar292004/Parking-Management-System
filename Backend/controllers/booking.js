@@ -5,7 +5,7 @@ const { Types } = require("mongoose");
 
 const bookingRouter = Router();
 
-// Create new booking
+// Create new booking endpoint
 bookingRouter.post("/", async (req, res) => {
     try {
 
@@ -115,7 +115,7 @@ bookingRouter.put("/:id", async (req, res) => {
     }
 });
 
-// Delete booking
+// Delete booking endpoint
 bookingRouter.route('/:id').delete(async (req, res) => {
     try {
         const { id } = req.params

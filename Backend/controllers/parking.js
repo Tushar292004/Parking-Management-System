@@ -6,7 +6,7 @@ const Review = require("../models/reviewSchema");
 
 const parkingRouter = Router();
 
-// Create new parking
+// Create new parking endpoint
 parkingRouter.post("/", async (req, res) => {
     try {
         let { name, address, city, lat, long, user_id } = req.body
@@ -74,7 +74,7 @@ parkingRouter.get("/", async (req, res) => {
     }
 });
 
-// Update parking
+// Update parking endpoint
 parkingRouter.put("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -124,7 +124,7 @@ parkingRouter.put("/:id", async (req, res) => {
     }
 });
 
-// Delete parking
+// Delete parking endpoint
 parkingRouter.route('/:id').delete(async (req, res) => {
     try {
         const { id } = req.params

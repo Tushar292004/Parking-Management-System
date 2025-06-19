@@ -34,6 +34,26 @@ This document provides a detailed overview of each page component in the Parking
   - Handles user logout
 - **Protected Routes:** All routes except '/' and '/about'
 - **State Management:** Uses Redux for user state
+- **Outlet Component:**
+  ```jsx
+  <main>
+      <Outlet />
+  </main>
+  ```
+  - The `Outlet` is a special React Router component that renders the child route's element
+  - It enables nested routing in the application
+  - When a child route is matched (e.g., '/parking' or '/profile'), its component is rendered inside the Layout where the Outlet is placed
+  - This allows the Layout (navigation, footer, etc.) to remain constant while only the main content area changes
+  - Benefits:
+    - Consistent UI layout across pages
+    - Shared authentication logic
+    - Common navigation and footer
+    - Reduced code duplication
+  - Example flow:
+    1. User visits '/parking'
+    2. Layout component renders
+    3. Outlet renders the Parking component inside Layout
+    4. Navigation and other Layout elements remain unchanged
 
 ## Authentication Pages
 
@@ -48,6 +68,84 @@ This document provides a detailed overview of each page component in the Parking
   - Stores user data and token in Redux
   - Redirects to home page after successful login
 - **Access:** Public
+- **React Hooks Usage:**
+  ```javascript
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  ```
+  - **Hook Explanation:**
+    1. **useNavigate Hook:**
+       - Part of React Router DOM
+       - Used for programmatic navigation
+       - Allows redirecting users to different routes
+       - Example usages:
+         - `navigate('/')` - Redirect to home page
+         - `navigate(-1)` - Go back to previous page
+         - `navigate('/profile')` - Go to profile page
+
+    2. **useDispatch Hook:**
+       - Part of React Redux
+       - Returns the dispatch function from Redux store
+       - Used to dispatch actions to update Redux state
+       - Essential for updating global state
+       - Example usage:
+         - `dispatch(setUser(userData))` - Update user state
+         - `dispatch(clearUser())` - Clear user state on logout
+
+    3. **Benefits of These Hooks:**
+       - Clean and functional approach to routing
+       - Centralized state management
+       - Type-safe dispatching of actions
+       - Better code organization
+       - Easier testing and maintenance
+
+- **Login Process Implementation:**
+  ```javascript
+  // Login API call with callback functions for handling response
+  const handleLogin = () => {
+      login({ email, password, handleLoginSuccess, handleLoginFailure })
+  }
+
+  const handleLoginSuccess = (data) => {
+      dispatch(setUser({ ...data?.user, token: data?.token }));
+      navigate('/')
+  }
+
+  const handleLoginFailure = (error) => {
+      setError(error)
+  }
+  ```
+  - **Code Explanation:**
+    1. **handleLogin Function:**
+       - Main login handler that triggers when user clicks login button
+       - Calls the `login` API function with:
+         - User credentials (email, password)
+         - Success and failure callback functions
+       - Uses callback pattern for better error handling and success management
+
+    2. **handleLoginSuccess Function:**
+       - Executes when login is successful
+       - Receives user data and JWT token from backend
+       - Uses Redux dispatch to:
+         - Store user information in global state
+         - Store JWT token for authentication
+       - Navigates user to home page after successful login
+       - Preserves login state across page refreshes (via Redux persist)
+
+    3. **handleLoginFailure Function:**
+       - Executes when login fails
+       - Sets error state with failure message from backend
+       - Displays error message to user
+       - Common failure scenarios:
+         - Invalid credentials
+         - Server errors
+         - Network issues
+
+    4. **Security Considerations:**
+       - JWT token stored securely in Redux state
+       - Error messages handled gracefully
+       - No sensitive data logged to console
+       - Proper state management for user feedback
 
 ### Register
 **File:** `Register.js`

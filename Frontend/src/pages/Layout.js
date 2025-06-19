@@ -15,6 +15,7 @@ const Layout = () => {
         dispatch(clearUser());
     };
 
+    //Protected Path Logic
     useEffect(() => {
         console.log('user ', user);
         if (!user && location.pathname !== '/' && location.pathname !== '/about') {
@@ -24,6 +25,7 @@ const Layout = () => {
 
     return (
         <div className="main-container">
+            {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
                     <a className="navbar-brand" href="#">SwiftyPark</a>
